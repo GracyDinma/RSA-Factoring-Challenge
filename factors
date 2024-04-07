@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+
+from sys import argv
+
+
+def factorize(value):
+
+    i = 2
+
+    if value < 2:
+return
+    print(value)
+    while value % i:
+    i += 1
+    print("{:d}={:d}*{:d}".format(value, value / i, i))
+    print(value)
+    print()
+
+    if len(argv) != 2:
+    exit()
+
+try:
+
+    with open(argv[1]) as file:
+
+    line = file.readline()
+
+    while line != "":
+	value = int(line.split('\n')[0])
+        factorize(value)
+        line = file.readline()
+except (IndexError, TypeError):
+    pass
